@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="keywords" content="Austin Chinese Church">
+		<meta name="description" content="Spiritual Formation">
+		<meta name="viewport"
+			content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>Spiritual Formation</title>
+		<link rel="stylesheet" href="../css/common.css" />
+		<link rel="stylesheet" href="../css/header.css" />
+		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="../css/affiliate.css" />
+		<link rel="stylesheet" href="../css/footer.css" />
+		<link rel="stylesheet" href="../css/cell.css" />
+	</head>
+	<body>
+		<section>
+			<article class="tcenter">
+				<div class="first-visit-title">
+					<h2>讀經生活日記</h2>
+					<p style="margin: 1em 0; font-size:1.2em">開始讀經之前，先花點時間禱告，求神通過經文對你說話:</p>
+					<blockquote>
+						<ul style="list-style-type: square; font-size: 1.1em">
+							<li>經文：讀完當天的段落，記下有感動的經文或章節。</li>
+							<li>省察：仔細思考這段經文講的是什麼，重點在哪。</li>
+							<li>應用：你覺得神要你如何把這段經文運用到今天的生活中，記錄下來。</li>
+							<li>禱告：寫下你的禱告，回應今天的信息。</li>
+						</ul>
+					</blockquote>
+				</div>
+			</article>
+			<article class="tcenter">
+				<div class="first-visit-title" id="daily-formation">
+					<h2>本周讀經進度表</h2>
+				</div>
+				<script>
+					window.onload = function() {
+						var table = document.createElement('table');
+						var thead = document.createElement('thead');
+						var tbody = document.createElement('tbody');
+						var tableContainer = document.querySelector('#daily-formation');
+
+
+						var theadRow = document.createElement('tr');
+						theadRow.innerHTML = `
+						<th>日期</th>
+						<th>星期</th>
+						<th>經文</th>
+						<th>每日輔讀</th>
+					`;
+						thead.appendChild(theadRow);
+
+						fetch('../upload/7_daily_spiritual_formation/tableData.json')
+							.then(response => {
+								if (!response.ok) {
+									throw new Error('Network response was not ok');
+								}
+								return response.text();
+							})
+							.catch(error => {
+								console.error('Error fetching tableData.json:', error);
+								// Fetch sample.json as fallback
+								return fetch('../upload/7_daily_spiritual_formation/tableData_sample.json')
+									.then(response => {
+										if (!response.ok) {
+											throw new Error('Network response was not ok');
+										}
+										return response.text();
+									})
+									.catch(error => {
+										console.error('Error fetching sample.json:', error);
+									});
+							})
+							.then(data => {
+								var tableData = JSON.parse(data);
+
+								for (var i = 0; i < tableData.length; i++) {
+									var row = document.createElement('tr');
+									var scriptureHTML = tableData[i].verses.map(function(verse) {
+										return `<a href="${verse.link}" target="_blank">${verse.verse}</a>`;
+									}).join(', ');
+									row.innerHTML = `
+									<td>${tableData[i].date}</td>
+									<td>${tableData[i].day}</td>
+									<td>${tableData[i].book}: ${scriptureHTML}</td>
+									<td><a href="${tableData[i].href}" target="_blank">每日輔讀</a></td>
+								`;
+									tbody.appendChild(row);
+								}
+
+								table.appendChild(thead);
+								table.appendChild(tbody);
+
+								tableContainer.insertAdjacentElement('afterend', table);
+							})
+							.catch(error => {
+								console.error('An error occurred:', error);
+							});
+					};
+				</script>
+			</article>
+		</section>
+		<footer>
+			<h3 style="font-size: 1.3em">奧斯汀華人教會</h3>
+			<h3>Austin Chinese Church</h3>
+			<p>
+				11118 Dessau Road, Austin, TX 78754
+				<br>
+				Phone: 512-339-8675
+				<br>
+				Fax: 512-339-9556
+				<br>
+				contact@austinchinesechurch.org
+			</p>
+			<p class="copyright">
+				© Austin Chinese Church. 2023. All rights reserved.
+			</p>
+		</footer>
+	</body>
+</html>
+
+<script charset="utf-8">
+	function callCellNav() {
+		var cellicon = document.getElementById("cellnavicon");
+
+		cellicon.addEventListener("click", function() {
+			navwrapper = document.getElementById("cellnavwrapper");
+			navwrapper.classList.remove("nodisplay");
+			navwrapper.classList.add("blockdisplay");
+		}, false);
+	}
+
+	function cellNavDrop() {
+		var items = document.querySelectorAll(".cellnav-bg");
+		for (var i = 0; i < items.length; i++) {
+			if (items[i].children.length > 1) {
+				var uri = items[i].children[0];
+				uri.addEventListener("click", function() {
+					dropControl(this, this.nextElementSibling);
+				}, false);
+			}
+		}
+	}
+
+	function dropControl(uri, subdiv) {
+		event.preventDefault();
+		var uri_expanded = uri.getAttribute("aria-expanded");
+		if (uri_expanded == "true") {
+			uri.setAttribute("aria-expanded", false);
+			uri.classList.remove("cellnav-subicon-collapse");
+			uri.classList.add("cellnav-subicon");
+			subdiv.classList.remove("blockdisplay");
+			subdiv.classList.add("nodisplay");
+
+		} else {
+			uri.setAttribute("aria-expanded", true);
+			uri.classList.remove("cellnav-subicon");
+			uri.classList.add("cellnav-subicon-collapse");
+			subdiv.classList.remove("nodisplay");
+			subdiv.classList.add("blockdisplay");
+		}
+	}
+
+	function menuCollapse() {
+		var gohome = document.getElementById("menu-collapse");
+		gohome.addEventListener("click", function() {
+			navwrapper = document.getElementById("cellnavwrapper");
+			navwrapper.classList.remove("blockdisplay");
+			navwrapper.classList.add("nodisplay");
+		}, false);
+	}
+	callCellNav();
+	cellNavDrop();
+	menuCollapse();
+</script>

@@ -1,0 +1,87 @@
+[
+	{
+		"date": "4/2",
+		"day": "週日",
+		"book": "約書亞記",
+		"verses": [{
+				"verse": "5",
+				"link": "http://www.bbintl.org/bible/b5niv/b5nivJos5.html"
+			},
+			{
+				"verse": "6",
+				"link": "http://www.bbintl.org/bible/b5niv/b5nivJos6.html"
+			}
+		],
+		"href": "http://austinchinesechurch.org/BibleReading/2023APR02.jpg"
+	},
+	{
+		"date": "4/3",
+		"day": "週一",
+		"book": "約書亞記",
+		"verses": [{
+			"verse": "7",
+			"link": "http://www.bbintl.org/bible/b5niv/b5nivJos7.html"
+		}],
+		"href": "http://austinchinesechurch.org/BibleReading/2023APR03.jpg"
+	},
+	{
+		"date": "4/4",
+		"day": "週二",
+		"book": "約書亞記",
+		"verses": [{
+			"verse": "8",
+			"link": "http://www.bbintl.org/bible/b5niv/b5nivJos8.html"
+		}],
+		"href": "http://austinchinesechurch.org/BibleReading/2023APR04.jpg"
+	},
+	{
+		"date": "4/5",
+		"day": "週三",
+		"book": "約書亞記",
+		"verses": [{
+			"verse": "9",
+			"link": "http://www.bbintl.org/bible/b5niv/b5nivJos9.html"
+		}],
+		"href": "http://austinchinesechurch.org/BibleReading/2023APR05.jpg"
+	},
+	{
+		"date": "4/6",
+		"day": "週四",
+		"book": "約書亞記",
+		"verses": [{
+			"verse": "10",
+			"link": "http://www.bbintl.org/bible/b5niv/b5nivJos10.html"
+		}],
+		"href": "http://austinchinesechurch.org/BibleReading/2023APR06.jpg"
+	},
+	{
+		"date": "4/7",
+		"day": "週五",
+		"book": "約書亞記",
+		"verses": [{
+				"verse": "11",
+				"link": "http://www.bbintl.org/bible/b5niv/b5nivJos11.html"
+			},
+			{
+				"verse": "12",
+				"link": "http://www.bbintl.org/bible/b5niv/b5nivJos12.html"
+			}
+		],
+		"href": "http://austinchinesechurch.org/BibleReading/2023APR07.jpg"
+	},
+	{
+		"date": "4/8",
+		"day": "週六",
+		"book": "約書亞記",
+		"verses": [{
+				"verse": "13",
+				"link": "http://www.bbintl.org/bible/b5niv/b5nivJos13.html"
+			},
+			{
+				"verse": "14",
+				"link": "http://www.bbintl.org/bible/b5niv/b5nivJos14.html"
+			}
+		],
+		"href": "http://austinchinesechurch.org/BibleReading/2023APR08.jpg"
+	}
+]

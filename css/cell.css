@@ -1,0 +1,188 @@
+@charset "utf-8";
+
+@media (max-width: 600px) {
+	.go-english h4 {
+		font-size: 0.875em;
+	}
+	.go-english {
+		width: 18%;
+		margin-top: 0.5em;
+		margin-bottom: 0.5em;
+	}
+	
+
+	.marquee>.inner>p {
+		font-size: 0.875em;
+	}
+
+	.intro>p span {
+		line-height: 1.0 !important;
+	}
+
+	.cellintro>p span {
+		font-size: 0.75em !important;
+	}
+
+	.first-visit-title p {
+		text-align: left !important;
+	}
+
+	.visitor-ul, .tv-ul {
+		display: flex !important;
+		flex-wrap: wrap !important;
+		text-align: left !important;
+	}
+	
+	.tv-ul {
+		padding: 1% 10% !important;
+	}
+
+	.visitor-li {
+		flex: 0 0 100% !important;
+	}
+	
+	.history-groupcount-ul {
+		display: flex;
+		flex-wrap: wrap;
+		text-align: left;
+	}
+
+	.linewrapper {
+		display: flex;
+		position: relative;
+		width: 100%;
+		padding: 3%;
+	}
+
+	.visitor-icon::after {
+		position: absolute;
+		top: 5em;
+		left: calc(5% + 1.55em);
+		height: calc(100% - 5em);
+		border-top: none;
+		border-left: 0.15em solid #5F178D;
+		content: "";
+		z-index: -10;
+	}
+
+	.visitor-content {
+		width: 100%;
+		padding: 0 7%;
+		margin-top: -0.5em;
+	}
+
+	.visitor-content a {
+		margin-left: 0;
+		width: 50%;
+		padding: 0.5em;
+		text-align: center;
+	}
+	
+	.sunday-worship-intro p{
+		text-align: left !important;
+	}
+
+	.pray-intro {
+		flex-direction: column;
+	}
+
+	.pray-reserve {
+		margin: 1% 20%;
+	}
+	
+	#pray-content {
+		text-align: left !important;
+	}
+
+	.header-background-supper {
+		background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("../upload/imgs/last-supper-cell.png") !important;
+	}
+	
+	.header-background-creation {
+		background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("../upload/imgs/creation-cell.jpg") !important;
+	}
+	
+	.header-background-paradise {
+		background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url("../upload/imgs/paradise-cell.jpg") !important;
+	}
+	
+	.row-to-col{
+		flex-direction: column;
+	}
+	
+	#facility-placeholder{
+		display: none;
+	}
+}
+
+@media (max-width: 750px) {
+	.sunday-worship-intro {
+		flex-direction: column;
+	}
+
+	#lunch-reserve {
+		margin-top: 1%;
+	}
+
+	.sunday-schedul-l {
+		flex-direction: column;
+	}
+
+	.sunday-schedule {
+		margin-top: 2%;
+	}
+
+	.notice-l {
+		flex-direction: column;
+	}
+
+	.notice-content {
+		width: 100%;
+	}
+}
+
+@media (max-width: 950px) {
+	.intro>p span {
+		line-height: 1.4;
+	}
+
+	#desknavwrapper {
+		display: none;
+	}
+
+	#cellnavicon {
+		display: flex;
+	}
+
+	.slideshow {
+		display: none;
+	}
+
+	.intro {
+		display: none;
+	}
+
+	.cellintro {
+		display: block;
+		margin-left: 10%;
+		margin-top: 7%;
+	}
+
+	.cellintro>p span {
+		color: white;
+		font-family: 'Montserrat', sans-serif;
+		line-height: 1.8;
+		text-align: left;
+		display: block;
+		font-size: 1.2em;
+		padding-left: 1em;
+	}
+
+	article {
+		margin-top: 10%;
+	}
+
+	article h2 {
+		font-size: 1.5em;
+	}
+}
