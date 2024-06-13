@@ -397,7 +397,7 @@
 
 .notice-content {
 	width: 48%;
-	margin: 3% 1% 0 1%;
+	margin: 1% 1% 0 1%;
 	background-color: #f0f1fa;
 	border-radius: 10px;
 	padding-bottom: 3%;
@@ -427,5 +427,5 @@
 	color: white;
 	text-align: center;
 	justify-content: center;
-	opacity: 95%;
+	opacity: 0.97;
 }
