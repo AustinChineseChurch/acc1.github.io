@@ -20,10 +20,6 @@ ul{
 	list-style: none;
 }
 
-article {
-	margin-top: 5%;
-}
-
 article h2{
 	font-size: 1.75em;
 }
@@ -93,4 +89,11 @@ article h2{
  
 .row-to-col{
 	flex-direction: row;
+}
+
+.spacer {
+	background-color: transparent;
+	margin: 0; 
+	padding: 0; 
+	height: 3rem;
 }

@@ -4,8 +4,9 @@
 	position: relative;
 	width: 100%;
 	height: 2em;
-	background: -webkit-linear-gradient(top, #000, #40205f);
-	background: -moz-linear-gradient(top, #000, #40205f);
+	background: #40205f;
+	/* background: -webkit-linear-gradient(top, #222222, #2e1442);
+	background: -moz-linear-gradient(top, #222222, #2e1442); */
 }
 
 .marquee {
@@ -91,175 +92,150 @@
 	
 }
 
+
 .topmenu {
 	position: relative;	
+	display: flex;
 }
 
-.topmenu>a{
-	padding: 0.9em 1em 0.2em 1em;
+.bar-option-home{
+	width: 7.5rem; 
+	padding: 0.8em 1em 2em 1em;
+	border-top:0.3em solid black;
+	height: 4rem;
+	text-align: center; /* 居中文字 */
+	cursor: pointer;
+	position: relative;
 }
 
-.topmenu>h3{
+.bar-option{
 	padding: 1em;
-	border-top:0.2em solid black;
+	border-top:0.3em solid black;
+	width: 10rem; /* 固定宽度 */
+	height: 4rem;
+	text-align: center; /* 居中文字 */
+	cursor: pointer;
+	position: relative;
 }
 
-.dropdown{
-	margin-top: 4em;
-	position: absolute;
-	float: left;
-	width: 100%;
-	background: -webkit-linear-gradient(top, #000, #40205f);
-	background: -moz-linear-gradient(top, #000, #40205f);
-	opacity: 0.9;
-	padding: 1em 0;
-	display: none;
+.bar-option>h1{
+	font-size: 1.4rem;
 }
 
-#drop1{
-	margin-left: 4.3em;
-}
-#drop2{
-	margin-left: 0.5em;
-}
-#drop4{
-	margin-left: 0.5em;
-}
-#drop5{
-	margin-left: 1.3em;
-}
-#drop6{
-	margin-left: 1.4em;
-}
-#drop7{
-	margin-left: 1.4em;
-}
-
-.dropdown>ul{
-	padding: 0.5em;
-	font-size: 1.1em;
-}
-
-.dropdown>ul>li{
-	padding: 0.7em 0;
-}
-
-.dropdown>ul a{
+.bar-option:hover{
+	background: #222222;
 	color: white;
 }
 
-/* hover effect */
-.topmenu:hover{
-	cursor: pointer;
-}
-.topmenu:hover .dropdown{
-	display: flex;
+.dropdown{
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	margin-top: 0px;
 	z-index: 10;
+	width: 100%;	
+	text-align: center;
+	/* background-color: #381c53; */
+	background: -webkit-linear-gradient(top, #222222, #2e1442);
+	background: -moz-linear-gradient(top, #222222, #2e1442);
+	opacity: 0.95;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
+	/* padding: 1em 0; */
 }
 
-.topmenu>h3:hover{
-	background: black;
-	color: #c266ff;
+.dropdown a {
+	color: white;
+	height: 4rem;	
+	padding-top: 1rem;
+	text-decoration: none;
+	font-size: 1.1rem;
+	display: block;
 }
 
 .dropdown a:hover{
-	color: #c266ff;
-}
+	text-decoration-line:underline;
+	text-underline-offset: 0.4em; 
+	text-decoration-thickness: 0.15em;
+} 
 
 #cellnavicon{
 	display: none;
-	float:right;
-	align-items: center;
-	justify-content: right;
-	padding-right: 3%;
-}
-
-#cellnavicon:hover{
+	position: absolute;
+	top: 3rem;
+	right: 5%;
 	cursor: pointer;
 }
 
 #cellnavicon span{
-	position: relative;
-	font-size: 3.5em;
+	font-size: 4rem;
+	margin: 0px;
+	padding: 0px;
 }
 
-#cellnavwrapper{
-	position: absolute;
-	top: 3em;
-	right:1em;
-	width: 40%;
-	z-index: 100;
-	background: -webkit-linear-gradient(top, #000, #40205f);
-	background: -moz-linear-gradient(top, #000, #40205f);
-	border-radius: 5px 0 0 5px;
+#cellnavwrapper {
+	background-color: #40205f; /* Dark purple background */
+	opacity: 0.97;
+	color: white; /* White text */
+	padding: 0px;
+	top: 0px;
+	width: 45%; /* Set the width to 50% of the screen */
+	box-sizing: border-box; /* Include padding in the width */
+	position: fixed;
+	right: -100%; /* Initial position off-screen */
+	height: 100%;
+	overflow-y: auto;
+	transition: right 0.8s ease; /* Transition effect */
+	z-index: 999; /* Ensure the nav is below the cellnavicon */
+}
+	
+/* Display the nav when the show class is added */
+#cellnavwrapper.show {
+	right: 0;
 }
 
-#menu-collapse{
-	color: #fff;
-	display: block;
-	padding: 0.5em 1em;
-	font-size: 1.4em;
+.cellnav-line {
+    border-bottom: 1px solid white;
+    padding: 10px;
 }
 
-.cellnav-line{
-	border-bottom: 1px solid #666e75;
+.cellnav-line:hover {
+    background: -webkit-linear-gradient(top, #222222, #2e1442);
+    background: -moz-linear-gradient(top, #222222, #2e1442);
 }
 
-.cellnav-bg:hover{
-	background-color:  #6b00b3;
+.cellnav-line>a{
+	font-size: 1.4rem;
+	padding: 1.3rem;
 }
 
-.cellnav-url{
-	color: #fff;
-	display: block;
-	padding: 1.25em 1em;
-	font-size: 1.25em;
-	font-weight: bold;
-	position: relative;
+.cellnav-suburl {
+    display: none;
 }
 
-.cellnav-subicon::before{
-	content: "⌵";
-	position: absolute;
-	right: 1em;
-	color: #fff;
+.cellnav-suburl>li {
+    list-style-type: none; /* 去掉子菜单项的圆点 */
+	font-size:1.1rem;
+	padding: 1rem 0rem 0rem 3rem;
 }
 
-.cellnav-subicon-collapse::before{
-	content: "⌃";
-	position: absolute;
-	right: 1em;
-	color: #fff;
+.cellnav-line:last-child {
+    border-bottom: none;
 }
 
-.cellnave-subwrapper{
-	background: black;
-	width: 90%;
+.cellnav-line:hover .cellnav-suburl {
+    display: block;
 }
 
-.cellnave-subwrapper ul{
-	width: 100%;
+.cellnav-line a {
+    color: white; 
+    text-decoration: none;
 }
 
-.cellnav-suburl{
-	color: #fff;
-	display: block;
-	padding: 0.5em 0 0.5em 1.7em;
-	font-size: 1.1em;
-	font-weight: bold;
-	overflow: hidden;
-	border-top: 1px solid #666e75;
-}
-
-.cellnav-suburl::before{
-	content: "-";
-	position: absolute;
-	left: 1em;
-	color: #fff;
-}
-
-.cellnave-subwrapper a:hover{
-	color: #c266ff;
+.cellnav-suburl a:hover {
+    text-decoration: underline;
+	text-underline-offset: 0.4em;
+	text-decoration-thickness: 0.15em;
 }
 
 

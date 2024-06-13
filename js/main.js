@@ -1,11 +1,10 @@
 window.onload = function() {
 	handleMarquee();
-	callCellNav();
-	cellNavDrop();
-	menuCollapse();
+    initNav();
 	controlVideo();
 	rollingAds();
 }
+
 
 // https://www.w3docs.com/snippets/css/how-to-have-the-marquee-effect-without-using
 // -the-marquee-tag-with-css-javascript-and-jquery.html#example-of-creating-a-marquee-
@@ -137,52 +136,72 @@ function rollingAds() {
 	slider.init();
 }
 
-
-function callCellNav() {
-	var cellicon = document.getElementById("cellnavicon");
-	cellicon.addEventListener("click", function() {
-		navwrapper = document.getElementById("cellnavwrapper");
-		navwrapper.classList.remove("nodisplay");
-		navwrapper.classList.add("blockdisplay");
-	}, false);
-}
-
-function cellNavDrop() {
-	var items = document.querySelectorAll(".cellnav-bg");
-	for (var i = 0; i < items.length; i++) {
-		if (items[i].children.length > 1) {
-			var uri = items[i].children[0];
-			uri.addEventListener("click", function() {
-				dropControl(this, this.nextElementSibling);
-			}, false);
-		}
+function desktopNav() {
+	function showDropdown(event) {
+		var dropdown = this.querySelector('.dropdown');
+		dropdown.style.display = 'block';
 	}
-}
 
-function dropControl(uri, subdiv) {
-	event.preventDefault();
-	var uri_expanded = uri.getAttribute("aria-expanded");
-	if (uri_expanded == "true") {
-		uri.setAttribute("aria-expanded", false);
-		uri.classList.remove("cellnav-subicon-collapse");
-		uri.classList.add("cellnav-subicon");
-		subdiv.classList.remove("blockdisplay");
-		subdiv.classList.add("nodisplay");
-
-	} else {
-		uri.setAttribute("aria-expanded", true);
-		uri.classList.remove("cellnav-subicon");
-		uri.classList.add("cellnav-subicon-collapse");
-		subdiv.classList.remove("nodisplay");
-		subdiv.classList.add("blockdisplay");
+	function hideDropdown(event) {
+		var dropdown = this.querySelector('.dropdown');
+		dropdown.style.display = 'none';
 	}
+
+	var tops = document.querySelectorAll('[id^=top]');
+	var dropdowns = document.querySelectorAll('.dropdown');
+
+	tops.forEach(function(top) {
+		top.addEventListener('mouseenter', showDropdown);
+		top.addEventListener('mouseleave', hideDropdown);
+	});
+
+	dropdowns.forEach(function(dropdown) {
+		dropdown.addEventListener('mouseenter', showDropdown);
+		dropdown.addEventListener('mouseleave', hideDropdown);
+	});
 }
 
-function menuCollapse() {
-	var gohome = document.getElementById("menu-collapse");
-	gohome.addEventListener("click", function() {
-		navwrapper = document.getElementById("cellnavwrapper");
-		navwrapper.classList.remove("blockdisplay");
-		navwrapper.classList.add("nodisplay");
-	}, false);
+function cellNav() {
+	// Get elements for the nav and the trigger button
+	var mobileNav = document.getElementById('cellnavwrapper');
+	var cellNavIcon = document.getElementById('cellnavicon');
+	var menuCollapse = document.getElementById('menucollapse');
+
+	// Show the nav when the trigger button is clicked
+	cellNavIcon.addEventListener('click', function() {
+		mobileNav.classList.add('show');
+	});
+
+	// Hide the nav when the collapse button is clicked
+	menuCollapse.addEventListener('click', function() {
+		mobileNav.classList.remove('show');
+	});
+}
+
+function initNav() {
+    var desktopMediaQuery = window.matchMedia("(min-width: 951px)");
+    var mobileMediaQuery = window.matchMedia("(max-width: 950px)");
+
+    function handleDesktopChange(e) {
+        if (e.matches) {
+            desktopNav();
+        }
+    }
+
+    function handleMobileChange(e) {
+        if (e.matches) {
+            cellNav();
+        }
+    }
+
+    desktopMediaQuery.addListener(handleDesktopChange);
+    mobileMediaQuery.addListener(handleMobileChange);
+
+    // 初始化时根据当前屏幕大小调用相应的导航函数
+    if (desktopMediaQuery.matches) {
+        desktopNav();
+    }
+    if (mobileMediaQuery.matches) {
+        cellNav();
+    }
 }
