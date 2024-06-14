@@ -151,6 +151,7 @@
 	}
 
 	#cellnavicon {
+		top: 1.5rem;
 		display: flex;
 	}
 
@@ -184,5 +185,13 @@
 
 	article h2 {
 		font-size: 1.5em;
+	}
+	
+	.sectionline{
+		display: flex;
+	}
+	
+	.spacer {
+		height: 1rem;
 	}
 }

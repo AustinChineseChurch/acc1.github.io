@@ -143,7 +143,6 @@
 .visitor-ul {
 	position: relative;
 	display: flex;
-	margin-bottom: 1em;
 	text-align: center;
 	padding: 1% 8%;
 }
@@ -151,7 +150,6 @@
 .tv-ul {
 	position: relative;
 	display: flex;
-	margin-bottom: 1em;
 	text-align: center;
 	padding: 1% 14%;
 }

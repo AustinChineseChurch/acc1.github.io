@@ -116,7 +116,7 @@
 .bar-option{
 	padding: 1em;
 	border-top:0.3em solid black;
-	width: 10rem; /* 固定宽度 */
+	width: 12rem; /* 固定宽度 */
 	height: 4rem;
 	text-align: center; /* 居中文字 */
 	cursor: pointer;
