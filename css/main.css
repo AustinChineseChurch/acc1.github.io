@@ -133,7 +133,12 @@
 
 
 /* First Visit ----------------------------------------------------------------------*/
-.first-visit-title,
+.first-visit-title {
+	text-align: center;
+	margin-left: 12%;
+	margin-right: 12%;
+}
+
 .notices {
 	text-align: center;
 	margin-left: 12%;

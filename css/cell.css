@@ -179,19 +179,11 @@
 		padding-left: 1em;
 	}
 
-	article {
-		margin-top: 10%;
-	}
-
 	article h2 {
 		font-size: 1.5em;
 	}
 	
 	.sectionline{
 		display: flex;
-	}
-	
-	.spacer {
-		height: 1rem;
 	}
 }
