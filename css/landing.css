@@ -6,7 +6,7 @@ body {
 	padding: 0;
 	background: url('../upload/imgs/landing_banner.jpg') no-repeat center center fixed;
 	background-size: cover;
-	/* height: 100vh; */
+	height: 100vh;
 }
 
 .overlay {
