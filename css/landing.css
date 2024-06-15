@@ -37,21 +37,34 @@ body {
 }
 
 .container {
+	width: 40%;
+	display: flex;
+	justify-content: center;
 	text-align: center;
+	margin: 0 auto;
 }
 
 .link-wrapper {
-	display: inline-block;
-	margin: 1rem 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 1em 2em;
+	width: 50%;
 }
 .link-wrapper a {
 	display: inline-block;
-	text-decoration: none; 
-	color: white; 
-	font-size: 1.4rem;
-	border: 2px solid white; 
-	padding: 0.5rem;
-	width: 6rem; 
-	height: 2rem;
+	text-decoration: none;
+	color: white;
+	font-size: 1.3em;
+	border: 2px solid white;
+	padding: 0.5em;
+	width: 100%;
 	text-align: center;
+	font-family: 'Roboto', sans-serif;
+}
+
+@media (max-width: 950px) {
+    .container {
+        width: 100%;
+    }
 }
