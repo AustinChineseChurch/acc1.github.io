@@ -24,16 +24,18 @@ body {
 	z-index: 1;
 	color: white;
 	text-align: center;
-	padding: 1.4rem;
+	padding: 2rem 1.5rem;
 }
 
 .content>h1{
 	font-size: 3rem;
+	line-height: 0.95;
 }
 
 .content>p{
 	font-size: 1.2rem;
 	position: relative; 
+	line-height: 0.95;
 }
 
 .container {
