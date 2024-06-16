@@ -4,7 +4,7 @@ body {
 	position: relative;
 	margin: 0;
 	padding: 0;
-	background: url('../upload/imgs/landing_banner.jpg') no-repeat center center fixed;
+	background: url('../upload/imgs/landing_banner.jpg') no-repeat center center local;
 	background-size: cover;
 	height: 100vh;
 }
