@@ -184,7 +184,7 @@
 	color: white; /* White text */
 	padding: 0px;
 	top: 0px;
-	width: 45%; /* Set the width to 50% of the screen */
+	width: 60%;
 	box-sizing: border-box; /* Include padding in the width */
 	position: fixed;
 	right: -100%; /* Initial position off-screen */
