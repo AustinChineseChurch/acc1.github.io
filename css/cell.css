@@ -186,4 +186,8 @@
 	.sectionline{
 		display: flex;
 	}
+	
+	.church-hist-schedule{
+		margin-top: 1rem;
+	}
 }
